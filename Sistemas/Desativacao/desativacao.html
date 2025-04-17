@@ -21,49 +21,54 @@
     <div class="container">
         <div class="box">
             <h1 style="color: #fff;">Calcular Proporcional de Desativação</h1>
-            <form id="desativacaoForm">
-                <div class="flex">
+            <div class="flex">
+                <form id="desativacaoForm" class="form">
                     <fieldset class="fieldset">
                         <legend>Valor do plano</legend>
                         <div class="column">
                             <label for="valorPlano">Valor do Plano</label>
                             <input type="number" id="valorPlano" name="valorPlano" required>
                         </div>
-                        <div class="column">
-                            <label for="dataVencimento">Data de Vencimento</label>
-                            <input type="date" id="dataVencimento" name="dataVencimento" required>
-                        </div>
-                        <div class="column">
-                            <label for="dataUltimoAcesso">Data de Último Acesso</label>
-                            <input type="date" id="dataUltimoAcesso" name="dataUltimoAcesso" required>
+                        <div class="flex">
+                            <div class="column">
+                                <label for="dataVencimento">Data de Vencimento</label>
+                                <input type="date" id="dataVencimento" name="dataVencimento" required>
+                            </div>
+                            <div class="column">
+                                <label for="dataUltimoAcesso">Data de Último Acesso</label>
+                                <input type="date" id="dataUltimoAcesso" name="dataUltimoAcesso" required>
+                            </div>
                         </div>
                         <div>
                     </fieldset>
                     <!-- ===TAXAS=== -->
                     <fieldset class="fieldset">
                         <legend>Taxas</legend>
-                        <div class="column">
-                            <label for="valorMulta">Valor da Multa</label>
-                            <input type="number" id="valorMulta" name="valorMulta" step="0.01" value="0">
+                        <div class="flex">
+                            <div class="column">
+                                <label for="valorMulta">Valor da Multa</label>
+                                <input type="number" id="valorMulta" name="valorMulta" step="0.01" value="0">
+                            </div>
+                            <div class="column">
+                                <label for="meses">Meses não utilizados</label>
+                                <select id="meses" class="status" name="meses">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="column">
-                            <label for="meses">Meses não utilizados</label>
-                            <select id="meses" class="status" name="meses">
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                        </div>
+                       
                         <div class="flexResp">
                             <div class="column">
                                 <label for="multaEquipamento">Equipamento</label>
@@ -80,10 +85,9 @@
                             </div>
                         </div>
                     </fieldset>
-                </div>
             </form>
-            <!-- ===RESULTADO=== -->
-            <fieldset class="fieldset resultado">
+             <!-- ===RESULTADO=== -->
+             <fieldset id="resultado" class="fieldset">
                 <legend>Resultado</legend>
                 <div class="output-container">
                     <h2 class="h2">Uso Total</h2>
@@ -94,6 +98,8 @@
                     <textarea id="protocolo" cols="60" rows="10" class="textarea" readonly></textarea>
                 </div>
             </fieldset>
+            </div>
+           
             <div class="footer">
                     <button onclick="location.href='../../index.html';" class="menu-item">Voltar</button>
                     <button type="button" class="menu-item" onclick="calcularDesativacao()">Calcular</button>
